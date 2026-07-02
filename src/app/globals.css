@@ -50,6 +50,9 @@
   --color-aegean: #1b5e6b;
   --color-aegean-bright: #2e8a99;
 
+  /* Laurel wreath mark — logomark only, antique gold. */
+  --color-laurel: #c2a25f;
+
   --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
     sans-serif;
   --font-display: var(--font-display), "Space Grotesk", ui-sans-serif,
