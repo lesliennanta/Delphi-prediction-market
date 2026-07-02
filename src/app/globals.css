@@ -44,14 +44,11 @@
   --color-no: #b5524a;
   --color-no-bright: #d6675d;
 
-  /* Ambient signature ink — the OracleMark only. Never interactive,
+  /* Ambient signature ink — brand identity only (OracleMark + logo),
      never used for anything transactional (that stays Delphic Bronze). */
   --color-oracle: #9c8a54;
   --color-aegean: #1b5e6b;
   --color-aegean-bright: #2e8a99;
-
-  /* Laurel wreath mark — logomark only, antique gold. */
-  --color-laurel: #c2a25f;
 
   --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
     sans-serif;

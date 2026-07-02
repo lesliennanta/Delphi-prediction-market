@@ -34,7 +34,7 @@ export default function LaurelMark({ className = "" }: { className?: string }) {
       <path
         d={STEM_LEFT}
         fill="none"
-        stroke="var(--color-laurel)"
+        stroke="var(--color-aegean-bright)"
         strokeWidth={2}
         strokeLinecap="round"
         opacity={0.55}
@@ -42,13 +42,13 @@ export default function LaurelMark({ className = "" }: { className?: string }) {
       <path
         d={STEM_RIGHT}
         fill="none"
-        stroke="var(--color-laurel)"
+        stroke="var(--color-aegean-bright)"
         strokeWidth={2}
         strokeLinecap="round"
         opacity={0.55}
       />
       {[...LEFT_LEAVES, ...RIGHT_LEAVES].map((d, i) => (
-        <path key={i} d={d} fill="var(--color-laurel)" />
+        <path key={i} d={d} fill="var(--color-aegean-bright)" />
       ))}
     </svg>
   );
