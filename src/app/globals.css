@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Dollar Green — primary brand / "Yes" accent */
-  --color-green-50: #eaf6ee;
-  --color-green-100: #cfead9;
-  --color-green-200: #a3d6b6;
-  --color-green-300: #71bd8d;
-  --color-green-400: #45a36b;
-  --color-green-500: #228b53;
-  --color-green-600: #167044;
-  --color-green-700: #135938;
-  --color-green-800: #11472f;
-  --color-green-900: #0e3a27;
-  --color-green-950: #082118;
+  /* Delphic Bronze — primary brand / "Yes" accent.
+     The patina color of the bronze votive offerings excavated at Delphi,
+     standing in for "Dollar Green" (see Section 4.2 override: brand-named). */
+  --color-green-50: #edf3f0;
+  --color-green-100: #d5e4dd;
+  --color-green-200: #accdbe;
+  --color-green-300: #7cb69b;
+  --color-green-400: #559d7c;
+  --color-green-500: #448868;
+  --color-green-600: #32674e;
+  --color-green-700: #28523f;
+  --color-green-800: #214031;
+  --color-green-900: #1a3227;
+  --color-green-950: #101e17;
 
   /* Dollar Grey — neutral / surfaces / "No" accent */
   --color-grey-50: #f4f5f2;
@@ -42,8 +44,11 @@
   --color-no: #b5524a;
   --color-no-bright: #d6675d;
 
-  /* Ambient signature ink — the OracleMark only. Never interactive. */
+  /* Ambient signature ink — the OracleMark only. Never interactive,
+     never used for anything transactional (that stays Delphic Bronze). */
   --color-oracle: #9c8a54;
+  --color-aegean: #1b5e6b;
+  --color-aegean-bright: #2e8a99;
 
   --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
     sans-serif;
