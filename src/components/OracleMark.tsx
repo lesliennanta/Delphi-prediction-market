@@ -80,7 +80,7 @@ export default function OracleMark({ className = "" }: { className?: string }) {
       <path
         d={strokePath}
         fill="none"
-        stroke="var(--color-aegean-bright)"
+        stroke="var(--color-accent-400)"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -33,7 +33,7 @@ export default function Sparkline({
       <polyline
         points={points.join(" ")}
         fill="none"
-        stroke={up ? "var(--color-green-400)" : "var(--color-no-bright)"}
+        stroke={up ? "var(--color-accent-400)" : "var(--color-no-bright)"}
         strokeWidth={1.75}
         strokeLinecap="round"
         strokeLinejoin="round"

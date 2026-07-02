@@ -17,7 +17,7 @@ export default function Navbar() {
               href="#"
               className={
                 i === 0
-                  ? "text-ink transition-colors hover:text-green-400"
+                  ? "text-ink transition-colors hover:text-accent-400"
                   : "transition-colors hover:text-ink"
               }
             >
@@ -43,7 +43,7 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="Search markets..."
-            className="w-full rounded-lg border border-border bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:border-green-600 focus:outline-none"
+            className="w-full rounded-lg border border-border bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent-600 focus:outline-none"
           />
         </div>
 
@@ -51,7 +51,7 @@ export default function Navbar() {
           <button className="hidden rounded-lg border border-border px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-grey-500 hover:text-ink sm:block">
             Sign In
           </button>
-          <button className="rounded-lg bg-green-500 px-3.5 py-2 text-sm font-semibold text-paper transition-colors hover:bg-green-400 sm:px-4">
+          <button className="rounded-lg bg-accent-500 px-3.5 py-2 text-sm font-semibold text-paper transition-colors hover:bg-accent-400 sm:px-4">
             Deposit
           </button>
         </div>

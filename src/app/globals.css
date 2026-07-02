@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* Delphic Bronze — primary brand / "Yes" accent.
-     The patina color of the bronze votive offerings excavated at Delphi,
-     standing in for "Dollar Green" (see Section 4.2 override: brand-named). */
-  --color-green-50: #edf3f0;
-  --color-green-100: #d5e4dd;
-  --color-green-200: #accdbe;
-  --color-green-300: #7cb69b;
-  --color-green-400: #559d7c;
-  --color-green-500: #448868;
-  --color-green-600: #32674e;
-  --color-green-700: #28523f;
-  --color-green-800: #214031;
-  --color-green-900: #1a3227;
-  --color-green-950: #101e17;
+  /* Aegean — primary brand / "Yes" accent, and the app's only accent hue.
+     Deliberately not green: the deep blue-teal of the sea itself, chosen to
+     read as clearly distinct from competitor prediction markets at a glance
+     rather than a recalibrated shade of the same "dark fintech green". */
+  --color-accent-50: #ebf3f5;
+  --color-accent-100: #d0e5e9;
+  --color-accent-200: #a8d4dc;
+  --color-accent-300: #68bbca;
+  --color-accent-400: #3999aa;
+  --color-accent-500: #2c8696;
+  --color-accent-600: #1f6875;
+  --color-accent-700: #1a525b;
+  --color-accent-800: #164149;
+  --color-accent-900: #12353b;
+  --color-accent-950: #0b2125;
 
   /* Dollar Grey — neutral / surfaces / "No" accent */
   --color-grey-50: #f4f5f2;
@@ -44,11 +45,8 @@
   --color-no: #b5524a;
   --color-no-bright: #d6675d;
 
-  /* Ambient signature ink — brand identity only (OracleMark + logo),
-     never used for anything transactional (that stays Delphic Bronze). */
+  /* Ambient signature ink — the OracleMark's apex dot only. */
   --color-oracle: #9c8a54;
-  --color-aegean: #1b5e6b;
-  --color-aegean-bright: #2e8a99;
 
   --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
     sans-serif;
@@ -72,8 +70,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-green-700);
-  color: var(--color-green-50);
+  background: var(--color-accent-700);
+  color: var(--color-accent-50);
 }
 
 .scrollbar-none::-webkit-scrollbar {

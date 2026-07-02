@@ -18,7 +18,7 @@ export default function CategoryTabs({ active, onChange }: Props) {
             onClick={() => onChange(cat)}
             className={`shrink-0 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               isActive
-                ? "bg-green-500 text-paper"
+                ? "bg-accent-500 text-paper"
                 : "bg-surface text-ink-muted hover:bg-surface-2 hover:text-ink"
             }`}
           >

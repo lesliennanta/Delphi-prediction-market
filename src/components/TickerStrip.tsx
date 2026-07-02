@@ -16,7 +16,7 @@ export default function TickerStrip() {
             >
               <span className="text-ink-muted">{m.icon}</span>
               <span className="text-ink">{m.yesPrice}¢</span>
-              <span className={up ? "text-green-400" : "text-no-bright"}>
+              <span className={up ? "text-accent-400" : "text-no-bright"}>
                 {up ? "▲" : "▼"} {Math.abs(change)}
               </span>
               <span className="text-ink-faint">{formatVolume(m.volume24h)} vol</span>
