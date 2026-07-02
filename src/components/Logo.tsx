@@ -4,7 +4,7 @@ export default function Logo({ className = "" }: { className?: string }) {
       <span className="flex h-8 w-8 items-center justify-center rounded-md bg-green-500 text-paper font-bold text-lg font-mono">
         Δ
       </span>
-      <span className="text-lg font-semibold tracking-tight text-ink">
+      <span className="font-display text-lg font-semibold tracking-tight text-ink">
         Delphi
       </span>
     </div>

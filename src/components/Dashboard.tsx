@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CategoryTabs from "./CategoryTabs";
 import MarketCard from "./MarketCard";
+import OracleMark from "./OracleMark";
 import Sidebar from "./Sidebar";
 import StatsBar from "./StatsBar";
 import { getMarketsByCategory, type Category } from "@/lib/markets";
@@ -14,13 +15,18 @@ export default function Dashboard() {
   return (
     <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6">
       <section className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-          Trade on what happens next.
-        </h1>
-        <p className="mt-2 max-w-2xl text-ink-muted">
-          Real-money prediction markets on politics, sports, crypto, and
-          culture. Buy Yes or No on the outcomes that matter.
-        </p>
+        <div className="flex items-start justify-between gap-8">
+          <div>
+            <h1 className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+              Trade on what happens next.
+            </h1>
+            <p className="mt-3 max-w-2xl text-ink-muted">
+              Real-money markets on politics, sports, crypto, and culture.
+              Buy Yes or No on what you think will happen.
+            </p>
+          </div>
+          <OracleMark className="hidden h-44 w-52 shrink-0 lg:block" />
+        </div>
         <div className="mt-6">
           <StatsBar />
         </div>

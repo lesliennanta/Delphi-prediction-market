@@ -195,3 +195,12 @@ export function formatVolume(value: number): string {
   if (value >= 1_000) return `$${(value / 1_000).toFixed(0)}K`;
   return `$${value}`;
 }
+
+/** Average, index-by-index, across every market's sparkline — the market's aggregate pulse. */
+export function getAggregateSparkline(): number[] {
+  const length = markets[0].sparkline.length;
+  return Array.from({ length }, (_, i) => {
+    const sum = markets.reduce((acc, m) => acc + m.sparkline[i], 0);
+    return sum / markets.length;
+  });
+}
