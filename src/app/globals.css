@@ -59,6 +59,74 @@ html {
   color-scheme: dark;
 }
 
+/* --- Light-mode experiment (not wired to a UI toggle yet) ---
+   Every numeric accent/grey step is used as a specific role by components
+   (e.g. accent-950 as a subtle fill, accent-400 as text on that fill), so
+   going light requires inverting which hex sits at which step, not just
+   picking lighter versions of the same values. Shared across all three
+   backgrounds below; only paper/surface/border/ink differ per variant. */
+[data-theme^="light-"] {
+  --color-accent-50: #0a1a1c;
+  --color-accent-100: #0d2226;
+  --color-accent-200: #113136;
+  --color-accent-300: #246d7b;
+  --color-accent-400: #19545f;
+  --color-accent-500: #1e606b;
+  --color-accent-600: #3392a3;
+  --color-accent-700: #53b4c6;
+  --color-accent-800: #80c4d0;
+  --color-accent-900: #d3eaee;
+  --color-accent-950: #e9f4f6;
+
+  --color-grey-50: #171816;
+  --color-grey-100: #212220;
+  --color-grey-200: #2e302c;
+  --color-grey-300: #474c43;
+  --color-grey-400: #666b61;
+  --color-grey-500: #7a8174;
+  --color-grey-600: #808679;
+  --color-grey-700: #9ea498;
+  --color-grey-800: #c7cac4;
+  --color-grey-900: #dbddd9;
+  --color-grey-950: #e6e7e4;
+
+  --color-no: #8f342c;
+  --color-no-bright: #9c3a32;
+
+  color-scheme: light;
+}
+
+[data-theme="light-white"] {
+  --color-paper: #fcfcfa;
+  --color-surface: #f5f5f2;
+  --color-surface-2: #eeeeea;
+  --color-border: #dedad2;
+  --color-ink: #14150f;
+  --color-ink-muted: #4b4e42;
+  --color-ink-faint: #5c604f;
+}
+
+[data-theme="light-orichalcum"] {
+  /* The gleaming reddish-gold metal of Plato's Atlantis legend. */
+  --color-paper: #f3ddab;
+  --color-surface: #eed49a;
+  --color-surface-2: #e8c988;
+  --color-border: #d4b06a;
+  --color-ink: #241a0c;
+  --color-ink-muted: #55431f;
+  --color-ink-faint: #665231;
+}
+
+[data-theme="light-silver"] {
+  --color-paper: #e9ebec;
+  --color-surface: #e0e3e4;
+  --color-surface-2: #d6dadb;
+  --color-border: #bfc4c6;
+  --color-ink: #16181a;
+  --color-ink-muted: #494f52;
+  --color-ink-faint: #5a6063;
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);
