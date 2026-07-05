@@ -55,8 +55,17 @@ function toPath(points: Point[]): string {
     .join(" ");
 }
 
-export default function OracleMark({ className = "" }: { className?: string }) {
-  const pulse = upsample(getAggregateSparkline(), 20);
+export default function OracleMark({
+  className = "",
+  data,
+}: {
+  className?: string;
+  /** Series to trace the delta legs from. Defaults to the aggregate pulse
+   *  across every open market; pass a single market's sparkline to make the
+   *  mark read that one market instead. */
+  data?: number[];
+}) {
+  const pulse = upsample(data ?? getAggregateSparkline(), 20);
 
   const left = jitterLeg(BASE_LEFT, APEX, pulse);
   const right = jitterLeg(APEX, BASE_RIGHT, pulse);

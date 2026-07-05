@@ -183,6 +183,11 @@ export const markets: Market[] = [
   },
 ];
 
+/** The most-active market by 24h volume — the oracle's current top reading. */
+export function getFeaturedMarket(): Market {
+  return [...markets].sort((a, b) => b.volume24h - a.volume24h)[0];
+}
+
 export function getMarketsByCategory(category: Category): Market[] {
   if (category === "Trending") {
     return [...markets].sort((a, b) => b.volume24h - a.volume24h);
