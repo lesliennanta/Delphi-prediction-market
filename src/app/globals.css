@@ -1,83 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* Aegean — primary brand / "Yes" accent, and the app's only accent hue.
-     Deliberately not green: the deep blue-teal of the sea itself, chosen to
-     read as clearly distinct from competitor prediction markets at a glance
-     rather than a recalibrated shade of the same "dark fintech green". */
-  --color-accent-50: #ebf3f5;
-  --color-accent-100: #d0e5e9;
-  --color-accent-200: #a8d4dc;
-  --color-accent-300: #68bbca;
-  --color-accent-400: #3999aa;
-  --color-accent-500: #2c8696;
-  --color-accent-600: #1f6875;
-  --color-accent-700: #1a525b;
-  --color-accent-800: #164149;
-  --color-accent-900: #12353b;
-  --color-accent-950: #0b2125;
+  /* Cobalt — the one functional accent (Yes, active states, CTAs, price %). */
+  --color-accent-50: #0e1125;
+  --color-accent-100: #121736;
+  --color-accent-200: #161e4b;
+  --color-accent-300: #293ba3;
+  --color-accent-400: #1f2e84;
+  --color-accent-500: #293ba3;
+  --color-accent-600: #2d42be;
+  --color-accent-700: #495ed4;
+  --color-accent-800: #8693df;
+  --color-accent-900: #ccd1f0;
+  --color-accent-950: #e7eaf8;
 
-  /* Dollar Grey — neutral / surfaces / "No" accent */
-  --color-grey-50: #f4f5f2;
-  --color-grey-100: #e6e8e1;
-  --color-grey-200: #cdd1c5;
-  --color-grey-300: #aab0a0;
-  --color-grey-400: #888f7d;
-  --color-grey-500: #6c7361;
-  --color-grey-600: #555b4c;
-  --color-grey-700: #41453a;
-  --color-grey-800: #2d3026;
-  --color-grey-900: #1d1f19;
-  --color-grey-950: #11130e;
-
-  /* Surfaces */
-  --color-paper: #0b0d09;
-  --color-surface: #131510;
-  --color-surface-2: #191c15;
-  --color-border: #262a20;
-
-  /* Text */
-  --color-ink: #eef0e8;
-  --color-ink-muted: #a7ad9a;
-  --color-ink-faint: #888f7d;
-
-  /* Outcome accents */
-  --color-no: #b5524a;
-  --color-no-bright: #d6675d;
-
-  /* Ambient signature ink — the OracleMark's apex dot only. */
-  --color-oracle: #9c8a54;
-
-  --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
-    sans-serif;
-  --font-display: var(--font-display), "Space Grotesk", ui-sans-serif,
-    sans-serif;
-  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
-}
-
-html {
-  color-scheme: dark;
-}
-
-/* --- Light-mode experiment (not wired to a UI toggle yet) ---
-   Every numeric accent/grey step is used as a specific role by components
-   (e.g. accent-950 as a subtle fill, accent-400 as text on that fill), so
-   going light requires inverting which hex sits at which step, not just
-   picking lighter versions of the same values. Shared across all three
-   backgrounds below; only paper/surface/border/ink differ per variant. */
-[data-theme^="light-"] {
-  --color-accent-50: #0a1a1c;
-  --color-accent-100: #0d2226;
-  --color-accent-200: #113136;
-  --color-accent-300: #246d7b;
-  --color-accent-400: #19545f;
-  --color-accent-500: #1e606b;
-  --color-accent-600: #3392a3;
-  --color-accent-700: #53b4c6;
-  --color-accent-800: #80c4d0;
-  --color-accent-900: #d3eaee;
-  --color-accent-950: #e9f4f6;
-
+  /* Warm neutral — "No" / structural tone. */
   --color-grey-50: #171816;
   --color-grey-100: #212220;
   --color-grey-200: #2e302c;
@@ -90,41 +27,39 @@ html {
   --color-grey-900: #dbddd9;
   --color-grey-950: #e6e7e4;
 
-  --color-no: #8f342c;
-  --color-no-bright: #9c3a32;
+  /* Cream ground. The risk: no prediction market looks like a poster. */
+  --color-paper: #f2ead9;
+  --color-surface: #f8f2e4;
+  --color-surface-2: #fbf8f1;
+  --color-border: #17150f;
 
+  --color-ink: #17150f;
+  --color-ink-muted: #57503f;
+  --color-ink-faint: #635b44;
+
+  /* Cinnabar red — down-tick / "No" signal only, never the accent.
+     -bright is calibrated for text on the dark ticker bar specifically. */
+  --color-no: #c23a3a;
+  --color-no-bright: #e05a4a;
+
+  /* Block palette — decorative only. Site-section wayfinding (ExploreRail)
+     and the market tunnel's tiles. Never used on functional/transactional
+     UI, which stays cobalt, so identity color and "buy" color never
+     compete for meaning. */
+  --color-block-cobalt: #2d4fd1;
+  --color-block-saffron: #e0a01c;
+  --color-block-vermilion: #c23f16;
+  --color-block-emerald: #187a48;
+
+  --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display: var(--font-display), "Bricolage Grotesque", ui-sans-serif,
+    sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
   color-scheme: light;
-}
-
-[data-theme="light-white"] {
-  --color-paper: #fcfcfa;
-  --color-surface: #f5f5f2;
-  --color-surface-2: #eeeeea;
-  --color-border: #dedad2;
-  --color-ink: #14150f;
-  --color-ink-muted: #4b4e42;
-  --color-ink-faint: #5c604f;
-}
-
-[data-theme="light-orichalcum"] {
-  /* The gleaming reddish-gold metal of Plato's Atlantis legend. */
-  --color-paper: #f3ddab;
-  --color-surface: #eed49a;
-  --color-surface-2: #e8c988;
-  --color-border: #d4b06a;
-  --color-ink: #241a0c;
-  --color-ink-muted: #55431f;
-  --color-ink-faint: #665231;
-}
-
-[data-theme="light-silver"] {
-  --color-paper: #e9ebec;
-  --color-surface: #e0e3e4;
-  --color-surface-2: #d6dadb;
-  --color-border: #bfc4c6;
-  --color-ink: #16181a;
-  --color-ink-muted: #494f52;
-  --color-ink-faint: #5a6063;
 }
 
 body {
@@ -138,8 +73,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent-700);
-  color: var(--color-accent-50);
+  background: var(--color-accent-600);
+  color: var(--color-surface-2);
 }
 
 .scrollbar-none::-webkit-scrollbar {

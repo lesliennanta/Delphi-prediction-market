@@ -6,7 +6,7 @@ const navLinks = ["Markets", "Portfolio", "Leaderboard", "Activity"];
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-paper/95 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
+    <header className="sticky top-0 z-30 border-b-2 border-ink bg-paper/95 backdrop-blur supports-[backdrop-filter]:bg-paper/80">
       <div className="mx-auto flex max-w-7xl items-center gap-6 px-4 py-3 sm:px-6">
         <Logo />
 
@@ -43,15 +43,15 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="Search markets..."
-            className="w-full rounded-lg border border-border bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent-600 focus:outline-none"
+            className="w-full rounded-full border-2 border-border bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent-500 focus:outline-none"
           />
         </div>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
-          <button className="hidden rounded-lg border border-border px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:border-grey-500 hover:text-ink sm:block">
+          <button className="hidden rounded-full border-2 border-ink px-3.5 py-2 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5 sm:block">
             Sign In
           </button>
-          <button className="rounded-lg bg-accent-500 px-3.5 py-2 text-sm font-semibold text-paper transition-colors hover:bg-accent-400 sm:px-4">
+          <button className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-surface-2 transition-transform hover:-translate-y-0.5">
             Deposit
           </button>
         </div>

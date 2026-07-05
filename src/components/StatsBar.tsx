@@ -13,9 +13,12 @@ export default function StatsBar() {
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       {stats.map((s) => (
-        <div key={s.label} className="bg-surface px-5 py-4">
+        <div
+          key={s.label}
+          className="rounded-2xl border-2 border-ink bg-surface-2 px-5 py-4"
+        >
           <div className="text-xs font-medium uppercase tracking-wide text-ink-faint">
             {s.label}
           </div>
