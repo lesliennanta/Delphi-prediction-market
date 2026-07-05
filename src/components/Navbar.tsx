@@ -43,7 +43,7 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="Search markets..."
-            className="w-full rounded-md border border-border bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent-500 focus:outline-none"
+            className="w-full rounded-lg border border-border bg-surface py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-faint focus:border-accent-600 focus:outline-none"
           />
         </div>
 

@@ -1,12 +1,71 @@
 @import "tailwindcss";
 
 @theme {
-  /* Azurite — the one accent. Ground pigment of Greek fresco blue, carried
-     over from the Aegean identity. Ramp is inverted for a LIGHT interface:
-     low steps are dark ink-on-stone text, high steps are pale washes.
-     Every numeric step is a fixed component role (400 = accent text/stroke,
-     500 = solid fill under light text, 950 = pale wash fill), so the ramp is
-     built by role, not by naive lightening. */
+  /* Aegean — primary brand / "Yes" accent, and the app's only accent hue.
+     Deliberately not green: the deep blue-teal of the sea itself, chosen to
+     read as clearly distinct from competitor prediction markets at a glance
+     rather than a recalibrated shade of the same "dark fintech green". */
+  --color-accent-50: #ebf3f5;
+  --color-accent-100: #d0e5e9;
+  --color-accent-200: #a8d4dc;
+  --color-accent-300: #68bbca;
+  --color-accent-400: #3999aa;
+  --color-accent-500: #2c8696;
+  --color-accent-600: #1f6875;
+  --color-accent-700: #1a525b;
+  --color-accent-800: #164149;
+  --color-accent-900: #12353b;
+  --color-accent-950: #0b2125;
+
+  /* Dollar Grey — neutral / surfaces / "No" accent */
+  --color-grey-50: #f4f5f2;
+  --color-grey-100: #e6e8e1;
+  --color-grey-200: #cdd1c5;
+  --color-grey-300: #aab0a0;
+  --color-grey-400: #888f7d;
+  --color-grey-500: #6c7361;
+  --color-grey-600: #555b4c;
+  --color-grey-700: #41453a;
+  --color-grey-800: #2d3026;
+  --color-grey-900: #1d1f19;
+  --color-grey-950: #11130e;
+
+  /* Surfaces */
+  --color-paper: #0b0d09;
+  --color-surface: #131510;
+  --color-surface-2: #191c15;
+  --color-border: #262a20;
+
+  /* Text */
+  --color-ink: #eef0e8;
+  --color-ink-muted: #a7ad9a;
+  --color-ink-faint: #888f7d;
+
+  /* Outcome accents */
+  --color-no: #b5524a;
+  --color-no-bright: #d6675d;
+
+  /* Ambient signature ink — the OracleMark's apex dot only. */
+  --color-oracle: #9c8a54;
+
+  --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-display: var(--font-display), "Space Grotesk", ui-sans-serif,
+    sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+/* --- Light-mode experiment (not wired to a UI toggle yet) ---
+   Every numeric accent/grey step is used as a specific role by components
+   (e.g. accent-950 as a subtle fill, accent-400 as text on that fill), so
+   going light requires inverting which hex sits at which step, not just
+   picking lighter versions of the same values. Shared across all three
+   backgrounds below; only paper/surface/border/ink differ per variant. */
+[data-theme^="light-"] {
   --color-accent-50: #0a1a1c;
   --color-accent-100: #0d2226;
   --color-accent-200: #113136;
@@ -19,7 +78,6 @@
   --color-accent-900: #d3eaee;
   --color-accent-950: #e9f4f6;
 
-  /* Neutral — warm olive-grey, the "No" / structural tone. Inverted for light. */
   --color-grey-50: #171816;
   --color-grey-100: #212220;
   --color-grey-200: #2e302c;
@@ -32,36 +90,41 @@
   --color-grey-900: #dbddd9;
   --color-grey-950: #e6e7e4;
 
-  /* Fresco stone — the ground. Weathered plaster, not white; the risk that
-     sets Delphi apart from every dark trading-terminal competitor. */
-  --color-paper: #e7ddc4;
-  --color-surface: #f0e8d5;
-  --color-surface-2: #f5eede;
-  --color-border: #d2c5a3;
+  --color-no: #8f342c;
+  --color-no-bright: #9c3a32;
 
-  /* Ink — carved warm near-black lettering. */
-  --color-ink: #26211a;
-  --color-ink-muted: #57503f;
-  --color-ink-faint: #635b44;
-
-  /* Cinnabar — the red pigment. "No" / downward movement only, never accent. */
-  --color-no: #a6301f;
-  --color-no-bright: #a6301f;
-
-  /* Yellow ochre — the mark's apex and inscription labels. */
-  --color-oracle: #b3811f;
-  --color-ochre-label: #785710;
-
-  --font-sans: var(--font-sans), "IBM Plex Sans", ui-sans-serif, system-ui,
-    sans-serif;
-  --font-display: var(--font-display), "Bricolage Grotesque", ui-sans-serif,
-    sans-serif;
-  --font-inscription: var(--font-inscription), "Cinzel", ui-serif, serif;
-  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
 }
 
-html {
-  color-scheme: light;
+[data-theme="light-white"] {
+  --color-paper: #fcfcfa;
+  --color-surface: #f5f5f2;
+  --color-surface-2: #eeeeea;
+  --color-border: #dedad2;
+  --color-ink: #14150f;
+  --color-ink-muted: #4b4e42;
+  --color-ink-faint: #5c604f;
+}
+
+[data-theme="light-orichalcum"] {
+  /* The gleaming reddish-gold metal of Plato's Atlantis legend. */
+  --color-paper: #f3ddab;
+  --color-surface: #eed49a;
+  --color-surface-2: #e8c988;
+  --color-border: #d4b06a;
+  --color-ink: #241a0c;
+  --color-ink-muted: #55431f;
+  --color-ink-faint: #665231;
+}
+
+[data-theme="light-silver"] {
+  --color-paper: #e9ebec;
+  --color-surface: #e0e3e4;
+  --color-surface-2: #d6dadb;
+  --color-border: #bfc4c6;
+  --color-ink: #16181a;
+  --color-ink-muted: #494f52;
+  --color-ink-faint: #5a6063;
 }
 
 body {
@@ -75,16 +138,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent-400);
-  color: var(--color-surface);
-}
-
-/* Inscription labels — short Cinzel small-caps in ochre, used sparingly. */
-.inscription {
-  font-family: var(--font-inscription);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--color-ochre-label);
+  background: var(--color-accent-700);
+  color: var(--color-accent-50);
 }
 
 .scrollbar-none::-webkit-scrollbar {
